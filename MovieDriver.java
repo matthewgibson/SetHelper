@@ -18,10 +18,12 @@ public class MovieDriver {
         Set<Movie> library = new HashSet<Movie>();  // HashSet or TreeSet
         Set<Movie> favorites = new HashSet<Movie>();
         Set<Movie> watched = new HashSet<Movie>();
+
         Set<Movie> recentlyWatched = new HashSet<Movie>();
         Set<Movie> comedy = new HashSet<Movie>();
         Set<Movie> drama = new HashSet<Movie>();
         Set<Movie> action_comedy = new HashSet<Movie>();
+
 
         library.add(m1);
         library.add(m2);
@@ -51,11 +53,13 @@ public class MovieDriver {
 
         System.out.println("Library is " + library);
         System.out.println("Favorites is " + favorites);
+
         //Part 3: Set helper instance and SetHelper questions for movies genres.
         SetHelper helper = new SetHelper();
 
         // calc the intersection of watched and dramas
         Set<Movie> watchedDramas = helper.intersect(watched, drama);
+
         System.out.println("Watched Dramas: " + watchedDramas);
         // what movies have I not watched?
         Set<Movie> unwatched = helper.difference(library, watched);
@@ -88,6 +92,7 @@ public class MovieDriver {
             }
         }
 
+
         //Part 5: Create a Queue (first-in, first-out) to hold a movie playlist
         Queue<Movie> playList = new LinkedList<Movie>();  //created a new Queue for LinkedList
         playList.add(m1);  // adds movies (m1) etc to the end of list
@@ -99,7 +104,6 @@ public class MovieDriver {
         System.out.println("First movie in the list is: " + firstToPlay);
         playList.remove();  // removes the first movie in the playList
         playList.remove();
-
     }
 
 }
